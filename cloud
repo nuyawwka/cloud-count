@@ -1,9 +1,11 @@
+from collections import deque
+
 def bfs(d, p):
     dxdy = [(0, -1), (0, 1), (-1, 0), (1, 0)]
-    buf  = [p]
+    buf  = deque([p])
     
     while buf:
-        p = buf.pop(0)
+        p = buf.popleft()
         d.pop(p)
 
         for i, j in dxdy:
